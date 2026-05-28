@@ -1,0 +1,259 @@
+/* style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+body{
+  background: linear-gradient(135deg, #fff0f5, #f3f0ff);
+  color:#2b2b2b;
+}
+
+/* NAVBAR */
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:rgba(255,255,255,0.6);
+  backdrop-filter:blur(10px);
+  box-shadow:0 5px 20px rgba(0,0,0,0.05);
+  z-index:1000;
+}
+
+.logo{
+  font-weight:600;
+  font-size:1.2rem;
+  color:#ff4f86;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:20px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#2b2b2b;
+  font-weight:500;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#ff4f86;
+}
+
+/* HERO */
+.hero{
+  min-height:90vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px;
+  background: linear-gradient(135deg, #ffd6e8, #e7d6ff);
+}
+
+.hero h1{
+  font-size:3rem;
+  margin-bottom:10px;
+}
+
+.hero p{
+  opacity:0.7;
+  margin-bottom:20px;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 22px;
+  background:#ff6fa3;
+  color:white;
+  border-radius:30px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  background:#ff4f86;
+}
+
+/* SECTIONS */
+.section{
+  padding:70px 20px;
+  max-width:1000px;
+  margin:auto;
+}
+
+.section h2{
+  text-align:center;
+  margin-bottom:30px;
+  font-size:2rem;
+}
+
+.section p{
+  text-align:center;
+  line-height:1.6;
+  opacity:0.85;
+}
+
+/* SKILLS */
+.skills{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
+  gap:15px;
+  margin-top:20px;
+}
+
+.skill{
+  background:white;
+  padding:18px;
+  border-radius:14px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+
+.skill:hover{
+  transform:translateY(-5px);
+}
+
+/* PROJECTS */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:20px;
+}
+
+.project{
+  position:relative;
+  background:white;
+  border-radius:18px;
+  padding:25px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.08);
+  overflow:hidden;
+  transition:0.4s;
+}
+
+.project::before{
+  content:"";
+  position:absolute;
+  top:-50px;
+  right:-50px;
+  width:120px;
+  height:120px;
+  background: radial-gradient(circle, #ffb3d1, transparent);
+  border-radius:50%;
+}
+
+.project:hover{
+  transform:translateY(-8px) scale(1.02);
+}
+
+.project h3{
+  margin-bottom:10px;
+}
+
+.project p{
+  font-size:0.9rem;
+  opacity:0.8;
+}
+
+.tag{
+  display:inline-block;
+  margin-top:12px;
+  padding:5px 10px;
+  font-size:0.75rem;
+  border-radius:20px;
+  background:#ffe3ee;
+}
+
+/* PROJECT BUTTON */
+.project-btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 18px;
+  font-size:0.85rem;
+  border-radius:25px;
+  text-decoration:none;
+  color:white;
+  background:linear-gradient(135deg, #ff6fa3, #c084fc);
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.project-btn:hover{
+  transform:translateY(-3px) scale(1.05);
+  background:linear-gradient(135deg, #ff4f86, #a855f7);
+}
+
+.case-study{
+  background:white;
+  margin-top:50px;
+  border-radius:20px;
+  padding:40px;
+  box-shadow:0 15px 30px rgba(0,0,0,0.08);
+}
+
+.case-study h4{
+  margin-top:20px;
+  color:#ff4f86;
+  font-size:1rem;
+}
+
+.case-study p{
+  text-align:left;
+  font-size:0.9rem;
+  opacity:0.85;
+}
+
+.section img{
+  width:;
+  margin-top:20px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.social-link img {
+  width: 40px;        /* controls size */
+  height: 40px;
+  object-fit: contain;
+  transition: 0.3s;
+}
+
+.social-link img:hover {
+  transform: translateY(-5px) scale(1.1);
+  filter: brightness(1.1);
+}
+
+.social-link {
+  background: white;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px;
+  font-size:0.85rem;
+  opacity:0.6;
+}
