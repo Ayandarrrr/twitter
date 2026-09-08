@@ -1,184 +1,432 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
+/* =========================================
+   RESET
+========================================= */
 
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
+* {
+  box-sizing: border-box;
 }
 
-.hero {
-  position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
+.app {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr) 320px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
 }
 
-#center {
+
+/* =========================================
+   LEFT SIDEBAR
+========================================= */
+
+.sidebar {
+  min-height: 100vh;
+  padding: 20px;
+  border-right: 1px solid #e6e6e6;
+  background: #ffffff;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+
+  font-size: 30px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.nav {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
+  gap: 5px;
 }
 
-#next-steps {
+.nav a {
+  display: block;
+  padding: 13px 10px;
+
+  color: #0f1419;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+
+  border-radius: 25px;
+}
+
+.nav a:hover {
+  background: #f2f2f2;
+}
+
+.post-button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 13px 20px;
+
+  border: none;
+  border-radius: 25px;
+
+  background: #000000;
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+/* =========================================
+   MAIN TIMELINE
+========================================= */
+
+.timeline {
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+
+  border-right: 1px solid #e6e6e6;
+  background: #ffffff;
+}
+
+
+/* =========================================
+   TIMELINE HEADER
+========================================= */
+
+.timeline-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.timeline-header h2 {
+  margin: 0;
+  padding: 18px;
+
+  font-size: 20px;
+}
+
+.tabs {
   display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
+  width: 100%;
 }
 
-#docs {
-  border-right: 1px solid var(--border);
+.tabs button {
+  flex: 1;
 
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
+  padding: 16px;
+
+  border: none;
+  background: transparent;
+
+  color: #536471;
+  font-size: 15px;
+  font-weight: 600;
 }
 
-#next-steps ul {
-  list-style: none;
-  padding: 0;
+.tabs button:hover {
+  background: #f5f5f5;
+}
+
+.tabs button.active {
+  color: #000000;
+  border-bottom: 3px solid #000000;
+}
+
+
+/* =========================================
+   TWEET COMPOSER
+========================================= */
+
+.tweet-box {
+  padding: 18px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.tweet-box-top {
   display: flex;
-  gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
+  align-items: center;
+  gap: 12px;
 }
 
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
+.tweet-box input {
+  width: 100%;
+  min-width: 0;
+
+  padding: 10px 0;
+
+  border: none;
+  outline: none;
+
+  font-size: 20px;
+  color: #0f1419;
 }
 
-.ticks {
-  position: relative;
+.tweet-box input::placeholder {
+  color: #536471;
+}
+
+.tweet-box-bottom {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 15px;
+}
+
+.post-button-small {
+  padding: 9px 20px;
+
+  border: none;
+  border-radius: 25px;
+
+  background: #000000;
+  color: #ffffff;
+
+  font-weight: bold;
+}
+
+
+/* =========================================
+   AVATARS
+========================================= */
+
+.avatar {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+
+/* =========================================
+   TWEETS
+========================================= */
+
+.tweet {
+  display: flex;
+  gap: 12px;
+
+  width: 100%;
+  padding: 18px;
+
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.tweet:hover {
+  background: #fafafa;
+}
+
+.tweet-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.tweet-user {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tweet-user strong {
+  color: #0f1419;
+}
+
+.tweet-user span {
+  color: #536471;
+}
+
+.tweet-text {
+  margin: 8px 0 12px;
+
+  color: #0f1419;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.tweet-image {
+  display: block;
+
+  width: 100%;
+  max-height: 400px;
+
+  object-fit: cover;
+
+  border-radius: 15px;
+}
+
+.tweet-actions {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 14px;
+}
+
+.tweet-actions button {
+  padding: 5px;
+
+  border: none;
+  background: transparent;
+
+  color: #536471;
+  font-size: 14px;
+}
+
+.tweet-actions button:hover {
+  color: #000000;
+}
+
+
+/* =========================================
+   RIGHT SIDEBAR
+========================================= */
+
+.right-sidebar {
+  min-height: 100vh;
+  padding: 20px;
+
+  background: #ffffff;
+}
+
+
+/* SEARCH */
+
+.search-box input {
   width: 100%;
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
+  padding: 13px 18px;
+
+  border: none;
+  border-radius: 25px;
+
+  outline: none;
+
+  background: #eff3f4;
+
+  font-size: 15px;
+}
+
+.search-box input:focus {
+  outline: 1px solid #000000;
+}
+
+
+/* TRENDS */
+
+.trends {
+  margin-top: 20px;
+
+  overflow: hidden;
+
+  border-radius: 16px;
+
+  background: #f7f9f9;
+}
+
+.trends h2 {
+  margin: 0;
+  padding: 18px;
+
+  font-size: 20px;
+}
+
+.trend {
+  padding: 15px 18px;
+}
+
+.trend:hover {
+  background: #eef1f1;
+}
+
+.trend span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #536471;
+  font-size: 13px;
+}
+
+.trend strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #0f1419;
+  font-size: 15px;
+}
+
+.trend small {
+  color: #536471;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+  .app {
+    grid-template-columns: 80px minmax(0, 1fr);
   }
 
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
+  .right-sidebar {
+    display: none;
   }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
+
+  .sidebar {
+    padding: 20px 10px;
+  }
+
+  .nav a {
+    font-size: 0;
+    text-align: center;
+  }
+
+  .post-button {
+    font-size: 0;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .app {
+    display: block;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .timeline {
+    width: 100%;
+    border-right: none;
+  }
+
+  .tweet {
+    padding: 15px;
+  }
+
+  .tweet-box {
+    padding: 15px;
+  }
+
+  .tweet-image {
+    max-height: 300px;
   }
 }
