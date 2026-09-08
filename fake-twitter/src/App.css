@@ -213,10 +213,7 @@
 }
 
 
-/* =========================================
-   TWEETS
-========================================= */
-
+/* TWEETS*/
 .tweet {
   display: flex;
   gap: 12px;
@@ -225,11 +222,14 @@
   padding: 18px;
 
   border-bottom: 1px solid #e6e6e6;
+  transition: background 0.2s ease;
 }
 
 .tweet:hover {
-  background: #fafafa;
+  background: #eeeeee;
 }
+
+
 
 .tweet-content {
   flex: 1;
@@ -255,7 +255,7 @@
   margin: 8px 0 12px;
 
   color: #0f1419;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.5;
 }
 
