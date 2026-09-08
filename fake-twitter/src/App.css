@@ -270,24 +270,23 @@
   border-radius: 15px;
 }
 
-.tweet-actions {
-  display: flex;
-  justify-content: space-between;
-
-  margin-top: 14px;
-}
 
 .tweet-actions button {
-  padding: 5px;
+  padding: 8px 12px;
 
   border: none;
+  border-radius: 20px;
   background: transparent;
 
   color: #536471;
   font-size: 14px;
+
+  cursor: pointer;
+  transition: background 0.2s ease;
 }
 
 .tweet-actions button:hover {
+  background: #eeeeee;
   color: #000000;
 }
 
