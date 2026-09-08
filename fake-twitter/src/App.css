@@ -9,10 +9,13 @@
 .app {
   width: 100%;
   min-height: 100vh;
+
   display: grid;
   grid-template-columns: 240px minmax(0, 1fr) 320px;
+
   margin: 0;
   padding: 0;
+
   text-align: left;
 }
 
@@ -24,6 +27,7 @@
 .sidebar {
   min-height: 100vh;
   padding: 20px;
+
   border-right: 1px solid #e6e6e6;
   background: #ffffff;
 }
@@ -31,9 +35,11 @@
 .logo {
   width: 45px;
   height: 45px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   margin-bottom: 25px;
 
   font-size: 30px;
@@ -41,27 +47,35 @@
   color: #000000;
 }
 
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
 .nav a {
   display: block;
+
   padding: 14px 12px;
 
   color: #0f1419;
   text-decoration: none;
+
   font-size: 18px;
   font-weight: 600;
 
   border-radius: 25px;
+
   transition: background 0.2s ease;
 }
 
 .nav a:hover {
-  background: #f2f2f2;
+  background: #eeeeee;
 }
-
-
 
 .post-button {
   width: 100%;
+
   margin-top: 30px;
   padding: 14px 20px;
 
@@ -75,6 +89,7 @@
   font-weight: bold;
 
   cursor: pointer;
+
   transition: opacity 0.2s ease;
 }
 
@@ -93,6 +108,7 @@
   min-height: 100vh;
 
   border-right: 1px solid #e6e6e6;
+
   background: #ffffff;
 }
 
@@ -104,9 +120,11 @@
 .timeline-header {
   position: sticky;
   top: 0;
+
   z-index: 10;
 
   background: rgba(255, 255, 255, 0.96);
+
   border-bottom: 1px solid #e6e6e6;
 }
 
@@ -131,8 +149,11 @@
   background: transparent;
 
   color: #536471;
+
   font-size: 15px;
   font-weight: 600;
+
+  cursor: pointer;
 }
 
 .tabs button:hover {
@@ -141,6 +162,7 @@
 
 .tabs button.active {
   color: #000000;
+
   border-bottom: 3px solid #000000;
 }
 
@@ -151,12 +173,16 @@
 
 .tweet-box {
   padding: 18px;
+
   border-bottom: 1px solid #e6e6e6;
+
+  background: #ffffff;
 }
 
 .tweet-box-top {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+
   gap: 12px;
 }
 
@@ -164,10 +190,12 @@
   width: 100%;
   min-width: 0;
 
-  padding: 10px 0;
+  padding: 12px 0;
 
   border: none;
   outline: none;
+
+  background: transparent;
 
   font-size: 20px;
   color: #0f1419;
@@ -185,7 +213,7 @@
 }
 
 .post-button-small {
-  padding: 9px 20px;
+  padding: 10px 20px;
 
   border: none;
   border-radius: 25px;
@@ -194,6 +222,14 @@
   color: #ffffff;
 
   font-weight: bold;
+
+  cursor: pointer;
+
+  transition: opacity 0.2s ease;
+}
+
+.post-button-small:hover {
+  opacity: 0.8;
 }
 
 
@@ -213,23 +249,27 @@
 }
 
 
-/* TWEETS*/
+/* =========================================
+   TWEETS
+========================================= */
+
 .tweet {
   display: flex;
+
   gap: 12px;
 
   width: 100%;
+
   padding: 18px;
 
   border-bottom: 1px solid #e6e6e6;
+
   transition: background 0.2s ease;
 }
 
 .tweet:hover {
   background: #eeeeee;
 }
-
-
 
 .tweet-content {
   flex: 1;
@@ -240,6 +280,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+
   gap: 5px;
 }
 
@@ -255,6 +296,7 @@
   margin: 8px 0 12px;
 
   color: #0f1419;
+
   font-size: 16px;
   line-height: 1.5;
 }
@@ -271,17 +313,31 @@
 }
 
 
+/* =========================================
+   TWEET ACTIONS
+========================================= */
+
+.tweet-actions {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 14px;
+}
+
 .tweet-actions button {
   padding: 8px 12px;
 
   border: none;
   border-radius: 20px;
+
   background: transparent;
 
   color: #536471;
+
   font-size: 14px;
 
   cursor: pointer;
+
   transition: background 0.2s ease;
 }
 
@@ -297,13 +353,16 @@
 
 .right-sidebar {
   min-height: 100vh;
+
   padding: 20px;
 
   background: #ffffff;
 }
 
 
-/* SEARCH */
+/* =========================================
+   SEARCH
+========================================= */
 
 .search-box input {
   width: 100%;
@@ -325,7 +384,9 @@
 }
 
 
-/* TRENDS */
+/* =========================================
+   TRENDS
+========================================= */
 
 .trends {
   margin-top: 20px;
@@ -339,39 +400,48 @@
 
 .trends h2 {
   margin: 0;
+
   padding: 18px;
 
   font-size: 20px;
 }
 
 .trend {
-  padding: 15px 18px;
+  padding: 16px 18px;
+
+  border-top: 1px solid #e6e6e6;
 }
 
 .trend:hover {
-  background: #eef1f1;
+  background: #eeeeee;
 }
 
 .trend span {
   display: block;
 
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 
   color: #536471;
+
   font-size: 13px;
 }
 
 .trend strong {
   display: block;
 
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 
   color: #0f1419;
+
   font-size: 15px;
 }
 
 .trend small {
+  display: block;
+
   color: #536471;
+
+  font-size: 13px;
 }
 
 
@@ -418,6 +488,7 @@
 
   .timeline {
     width: 100%;
+
     border-right: none;
   }
 
