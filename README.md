@@ -2,12 +2,12 @@
 
 A fully responsive Twitter Timeline clone built as a solo project for the Zaio Full Stack Developer program (iHub Africa initiative). Styled feed, real profile images, dark/light mode, and a themed FYP centered around gospel, styling, football, and the Ngabo Live concert (July 2026).
 
-🔗 **Live demo:** [Add your Netlify link here]
-🎥 **Loom walkthrough:** [Add your Loom link here]
+ **Live demo:** https://tinatwist.netlify.app
+
 
 ---
 
-## ✨ Features
+##  Features
 
 - **Responsive Twitter-style layout** — sidebar nav, tweet compose box, main timeline feed, and a right-hand trends/FYP panel. Fully responsive from 4K monitors down to small Android screens.
 - **Login page** *(built with Cursor)* — simple demo auth flow with validation and session persistence via `localStorage`.
@@ -20,7 +20,7 @@ A fully responsive Twitter Timeline clone built as a solo project for the Zaio F
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - HTML5
 - CSS3 (CSS variables for theming, Flexbox/Grid for layout)
